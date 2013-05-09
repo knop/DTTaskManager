@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:baselineAligned="false"
+    android:divider="?android:attr/dividerHorizontal"
+    android:orientation="horizontal"
+    android:showDividers="middle"
+    tools:context=".MainActivity" >
+
+    <include
+        android:id="@+id/right_detail_waiting"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="3"
+        layout="@layout/view_waiting"
+        android:visibility="visible" />
+
+    <include
+        android:id="@+id/right_detail_retry"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="3"
+        layout="@layout/view_retry"
+        android:visibility="gone" />
+
+    <GridView
+        android:id="@+id/right_detail_gridview"
+        android:layout_margin="20dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:columnWidth="150dp"
+        android:gravity="center"
+        android:listSelector="@drawable/gridview_selector"
+        android:horizontalSpacing="20dp"
+        android:numColumns="auto_fit"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="10dp" />
+
+</LinearLayout>

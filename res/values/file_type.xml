@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="audio">
+        <item>.mp3</item>
+        <item>.wav</item>
+    </array>
+    <array name="video">
+        <item>.mp4</item>
+        <item>.rmvb</item>
+        <item>.avi</item>
+        <item>.flv</item>
+    </array>
+    <array name="txt">
+        <item>.doc</item>
+        <item>.docx</item>
+    </array>
+
+</resources>

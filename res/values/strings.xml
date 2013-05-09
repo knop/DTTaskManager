@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">筑梦堂</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="welcome">欢迎来到筑梦堂！</string>
+    
+    <string name="login_invalid">请输入帐号和密码</string>
+    <string name="login_error">登录失败</string>
+
+</resources>

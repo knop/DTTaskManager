@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:baselineAligned="false"
+    android:divider="?android:attr/dividerHorizontal"
+    android:orientation="horizontal"
+    android:showDividers="middle"
+    tools:context=".MainActivity" >
+
+    <fragment
+        android:id="@+id/left_list_fragment"
+        android:name="com.team4.activities.LeftListFragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        tools:layout="@android:layout/list_content" />
+
+    <include
+        android:id="@+id/right_detail_empty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:layout_gravity="center"
+        android:visibility="visible"
+        layout="@layout/view_empty" />
+
+    <FrameLayout
+        android:id="@+id/item_detail_container"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_weight="3" />
+
+</LinearLayout>
