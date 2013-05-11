@@ -27,7 +27,7 @@ public class LoginActivity extends Activity implements
 	private EditText mETPassword;
 	private ProgressDialog mPDWaiting;
 	
-	private String mStudentId;
+	private TStudent mStudent;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,7 +49,7 @@ public class LoginActivity extends Activity implements
 			this.login();
 			break;
 		case R.id.btn_exit:
-			this.exit();
+			this.exit(); 
 			break;
 		default:
 			break;
@@ -75,9 +75,9 @@ public class LoginActivity extends Activity implements
 	@Override
 	public void onLoginCompletation(TStudent student, T4Exception ex) {		
 		if (student != null) {
-			mStudentId = String.valueOf(student.getId());
+			mStudent = student;
 			GetDatesAsyncTask task = new GetDatesAsyncTask(this);
-			task.execute(mStudentId);
+			task.execute(String.valueOf(student.getId()));
 		} else {
 			mPDWaiting.dismiss();
 			String errorMessage;
@@ -94,9 +94,8 @@ public class LoginActivity extends Activity implements
 		mPDWaiting.dismiss();
 		if (dates != null) {
 			Intent intent = new Intent(this, MainActivity.class);
-			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			intent.putExtra(T4Const.kDates, dates);
-			intent.putExtra(T4Const.kStudentId, mStudentId);
+			intent.putExtra(T4Const.kStudent, mStudent);
 			this.startActivity(intent);	
 			this.finish();
 		} else {

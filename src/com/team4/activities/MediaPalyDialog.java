@@ -1,6 +1,7 @@
 package com.team4.activities;
 
 import java.io.IOException;
+import java.lang.ref.WeakReference;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -11,11 +12,16 @@ import android.media.MediaPlayer.OnErrorListener;
 import android.media.MediaPlayer.OnInfoListener;
 import android.media.MediaPlayer.OnPreparedListener;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.os.PowerManager;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
+import com.team4.consts.T4Function;
 import com.team4.dttaskmanager.R;
 
 public class MediaPalyDialog extends Dialog implements 
@@ -27,11 +33,18 @@ public class MediaPalyDialog extends Dialog implements
 	private String mUrl;
 	private View mViewWaiting;
 	private View mViewPlaying;
-	private Button mBtnPlayAndPause;
-	
+	private SeekBar mSeekBar;
+	private TextView mTvProgress;
+	private ImageButton mBtnPlay;
+	private ImageButton mBtnPause;
+	private boolean mIsPause;
+
+	private UpdateUIHandler mHandler = new UpdateUIHandler(this);
+    
 	public MediaPalyDialog(Context context, String url) {
 		super(context);
 		mUrl = url;
+		mIsPause = false;
 		createMediaPlayer();
 	}
 	
@@ -42,12 +55,17 @@ public class MediaPalyDialog extends Dialog implements
         setContentView(R.layout.view_play_dialog);
         mViewWaiting = findViewById(R.id.pb_waiting);
         mViewPlaying = findViewById(R.id.iv_play_icon);
+        mSeekBar = (SeekBar)findViewById(R.id.sb_progress);
+        mTvProgress = (TextView)findViewById(R.id.tv_progress);
+        
     	mViewWaiting.setVisibility(View.GONE);
     	mViewPlaying.setVisibility(View.VISIBLE);
-        mBtnPlayAndPause = (Button)findViewById(R.id.btn_play_and_pause);
-        mBtnPlayAndPause.setOnClickListener(this);
+
+    	mBtnPlay = (ImageButton)findViewById(R.id.btn_play);
+    	mBtnPause = (ImageButton)findViewById(R.id.btn_pause);
+    	mBtnPlay.setOnClickListener(this);
+    	mBtnPause.setOnClickListener(this);
         findViewById(R.id.btn_previous).setOnClickListener(this);
-        findViewById(R.id.btn_stop).setOnClickListener(this);
         findViewById(R.id.btn_next).setOnClickListener(this);
     }
     
@@ -60,6 +78,9 @@ public class MediaPalyDialog extends Dialog implements
     @Override
     public void dismiss() {
     	onStopMedia();
+		if (mHandler != null) {
+			mHandler.removeMessages(0);
+		}
     	if (mMediaPlayer != null) {
     		mMediaPlayer.release();
     		mMediaPlayer = null;
@@ -95,11 +116,11 @@ public class MediaPalyDialog extends Dialog implements
 		case R.id.btn_previous:
 			onPrevious();
 			break;
-		case R.id.btn_play_and_pause:
-			onPlayAnPause();
+		case R.id.btn_play:
+			onPlayMedia();
 			break;
-		case R.id.btn_stop:
-			onStopMedia();
+		case R.id.btn_pause:
+			onPauseMedia();
 			break;
 		case R.id.btn_next:
 			onNext();
@@ -115,33 +136,45 @@ public class MediaPalyDialog extends Dialog implements
 		}		
 	}
 
-	private void onPlayAnPause() {
+	private void onPlayMedia() {
 		if (mMediaPlayer == null) {	
 			createMediaPlayer();
-			resetMediaPlayer();
+			resetMediaPlayer(); 
 		}
 		
 		if (!mMediaPlayer.isPlaying()) {
-			mBtnPlayAndPause.setEnabled(false);
-			mBtnPlayAndPause.setText("暂停");
-	    	mViewWaiting.setVisibility(View.VISIBLE);
-	    	mViewPlaying.setVisibility(View.GONE);
-			try {
-				mMediaPlayer.prepareAsync();
-			} catch (IllegalStateException e) {
-				e.printStackTrace();
+			if (mIsPause) {
+				mBtnPlay.setEnabled(false);
+				mBtnPause.setEnabled(true);
+				mMediaPlayer.start();
+			} else {
+				mBtnPlay.setEnabled(false);
+				mBtnPause.setEnabled(false);
+		    	mViewWaiting.setVisibility(View.VISIBLE);
+		    	mViewPlaying.setVisibility(View.GONE);
+				try {
+					mMediaPlayer.prepareAsync();
+				} catch (IllegalStateException e) {
+					e.printStackTrace();
+				}
 			}
-		} else {
-			mBtnPlayAndPause.setText("播放");
-			mMediaPlayer.pause();
+			mIsPause = false;
 		}	
 	}
 	
 	private void onStopMedia() {
 		if (mMediaPlayer != null && mMediaPlayer.isPlaying()) {
-			mBtnPlayAndPause.setText("播放");
 			mMediaPlayer.stop();
 			resetMediaPlayer();
+		}
+	}
+	
+	private void onPauseMedia() {
+		if (mMediaPlayer != null && mMediaPlayer.isPlaying()) {
+			mIsPause = true;
+			mBtnPlay.setEnabled(true);
+			mBtnPause.setEnabled(false);
+			mMediaPlayer.pause();
 		}		
 	}
 	
@@ -155,7 +188,10 @@ public class MediaPalyDialog extends Dialog implements
 
 	@Override
 	public void onCompletion(MediaPlayer mp) {
-		onStopMedia();
+		mp.seekTo(0);
+		mIsPause = true;
+		mBtnPlay.setEnabled(true);
+		mBtnPause.setEnabled(false);
 	}
 
 	@Override
@@ -168,10 +204,15 @@ public class MediaPalyDialog extends Dialog implements
 	@Override
 	public void onPrepared(MediaPlayer arg0) {
 		// TODO Auto-generated method stub
-		mBtnPlayAndPause.setEnabled(true);
     	mViewWaiting.setVisibility(View.GONE);
     	mViewPlaying.setVisibility(View.VISIBLE);
-    	mMediaPlayer.start();
+    	mTvProgress.setVisibility(View.VISIBLE);
+		mBtnPlay.setEnabled(false);
+		mBtnPause.setEnabled(true);
+    	if (mMediaPlayer != null)
+    		mMediaPlayer.start();
+    	if (mHandler != null)
+    		mHandler.sendMessage(mHandler.obtainMessage(UpdateUIHandler.fMsgUpdateProgressView));
 	}
 
 	@Override
@@ -180,4 +221,31 @@ public class MediaPalyDialog extends Dialog implements
 		return false;
 	}
 	
+    private void updateProgressView() {
+    	if (mMediaPlayer != null) {
+			int position = mMediaPlayer.getCurrentPosition();		
+			int mMax = mMediaPlayer.getDuration();
+			int sMax = mSeekBar.getMax();
+			mTvProgress.setText("时间："+T4Function.timeFormat(position)+"/"+T4Function.timeFormat(mMax));
+			mSeekBar.setProgress(position*sMax/mMax);   
+    	}
+    }
+	
+	private static class UpdateUIHandler extends Handler {
+		
+		private static final int fMsgUpdateProgressView = 0;
+		
+		private final int fUpdateInterval = 100;
+		
+		WeakReference<MediaPalyDialog> mDialog;
+		
+		UpdateUIHandler(MediaPalyDialog dialog) {
+			mDialog = new WeakReference<MediaPalyDialog>(dialog);
+		}
+		
+        public void handleMessage(Message msg) {  
+        	mDialog.get().updateProgressView();
+        	sendMessageDelayed(obtainMessage(fMsgUpdateProgressView), fUpdateInterval);
+        }  
+	}
 }

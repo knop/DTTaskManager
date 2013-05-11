@@ -28,8 +28,15 @@
         layout="@layout/view_retry"
         android:visibility="gone" />
 
+    <ImageView
+        android:id="@+id/right_detail_imageview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:src="@drawable/total" />
+
     <GridView
         android:id="@+id/right_detail_gridview"
+        android:visibility="gone"
         android:layout_margin="20dp"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"

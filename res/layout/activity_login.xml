@@ -2,15 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#FFFFFF"
+    android:background="@drawable/login_background"
     android:baselineAligned="false"
     android:gravity="center_horizontal"
-    android:orientation="horizontal" >
+    android:orientation="vertical" >
 
     <LinearLayout
-        android:layout_width="400dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="100dp"
+        android:layout_width="306dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="141dp"
         android:background="@drawable/corner_round"
         android:gravity="center"
         android:orientation="vertical" >
@@ -52,29 +52,30 @@
                 android:hint="请输入你的密码"
                 android:inputType="textPassword" />
         </LinearLayout>
+    </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="fill_parent"
+    <LinearLayout
+        android:layout_width="306dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="20dp" >
+
+        <Button
+            android:id="@+id/btn_exit"
+            android:layout_width="113dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="30dp"
-            android:paddingRight="30dp"
-            android:paddingTop="20dp" >
+            android:background="@drawable/button_small_selector"
+            android:layout_marginRight="10dp"
+            android:text="退出"
+            android:textColor="#FFFFFF" />
 
-            <Button
-                android:id="@+id/btn_login"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:text="登录" />
-
-            <Button
-                android:id="@+id/btn_exit"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:text="退出" />
-        </LinearLayout>
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="184dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_big_selector"
+            android:text="登录"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 
 </LinearLayout>

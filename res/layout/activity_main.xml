@@ -10,29 +10,62 @@
     android:showDividers="middle"
     tools:context=".MainActivity" >
 
-    <fragment
-        android:id="@+id/left_list_fragment"
-        android:name="com.team4.activities.LeftListFragment"
+    <RelativeLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"
         android:layout_margin="10dp"
-        tools:layout="@android:layout/list_content" />
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <fragment
+            android:id="@+id/left_list_fragment"
+            android:name="com.team4.activities.LeftListFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottom_bar"
+            tools:layout="@android:layout/list_content" />
+
+        <LinearLayout
+            android:id="@+id/bottom_bar"
+            android:layout_width="306dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:paddingTop="20dp" >
+
+            <Button
+                android:id="@+id/btn_refresh"
+                android:layout_width="184dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/button_big_selector"
+                android:text="刷新"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_width="113dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_small_selector"
+                android:text="登出"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+    </RelativeLayout>
 
     <include
         android:id="@+id/right_detail_empty"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="3"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:visibility="visible"
-        layout="@layout/view_empty" />
+        android:layout_weight="3"
+        layout="@layout/view_empty"
+        android:visibility="visible" />
 
     <FrameLayout
         android:id="@+id/item_detail_container"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:visibility="gone"
-        android:layout_weight="3" />
+        android:layout_weight="3"
+        android:visibility="gone" />
 
 </LinearLayout>

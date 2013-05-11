@@ -10,6 +10,7 @@ public class TStudent implements IBaseType, Serializable{
 	
 	private int mId;
 	private String mName;
+	private String mSchool;
 	
 	
 	public int getId() {
@@ -26,5 +27,13 @@ public class TStudent implements IBaseType, Serializable{
 	
 	public void setName(String name) {
 		this.mName = name;
+	}
+
+	public String getSchool() {
+		return mSchool;
+	}
+
+	public void setSchool(String school) {
+		this.mSchool = school;
 	}
 }

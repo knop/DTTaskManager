@@ -45,7 +45,7 @@ public class DownloadDialog extends ProgressDialog implements OnDownloadListener
 
 	@Override
 	public void dismiss() {
-		mTask.cancel(true);
+		mTask.cancel(true); 
 		super.dismiss();
 	}
 

@@ -53,15 +53,20 @@ public class RightDetailFragment extends Fragment implements
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_right_detail, container, false);
+		View view = rootView.findViewById(R.id.right_detail_imageview);
 		mViewWaiting = rootView.findViewById(R.id.right_detail_waiting);
 		mViewRetry = rootView.findViewById(R.id.right_detail_retry);
 		mGVContent = (GridView)rootView.findViewById(R.id.right_detail_gridview);
-		mGVContent.setOnItemClickListener(this);
-		mViewWaiting.setVisibility(View.VISIBLE);
-		mGVContent.setVisibility(View.GONE);
-		mViewRetry.setVisibility(View.GONE);
-		GetTasksAsyncTask task = new GetTasksAsyncTask(this.getActivity(), this);
-		task.execute(mStudentId, mDate);
+		if(mDate.equalsIgnoreCase("总览")) {			
+			view.setVisibility(View.VISIBLE);
+			mViewWaiting.setVisibility(View.GONE);
+		} else {
+			view.setVisibility(View.GONE);
+			mGVContent.setOnItemClickListener(this);
+			mViewWaiting.setVisibility(View.VISIBLE);
+			GetTasksAsyncTask task = new GetTasksAsyncTask(this.getActivity(), this);
+			task.execute(mStudentId, mDate);
+		}
 		return rootView;
 	}
 
@@ -168,7 +173,7 @@ public class RightDetailFragment extends Fragment implements
 		String url = holder.task.getAttachment();
 		if (T4Function.checkFileTypeInStringArray(url, getResources().getStringArray(R.array.audio))) {
 			MediaPalyDialog dialog = new MediaPalyDialog(getActivity(), HttpManager.fillUrl(url));
-			dialog.setTitle(job);
+			dialog.setTitle(job+" - "+T4Function.getFileNameFromPath(url));
 			dialog.show();
 		} else if (T4Function.checkFileTypeInStringArray(url, getResources().getStringArray(R.array.txt))) {
 			DownloadDialog dialog = new DownloadDialog(getActivity(), url);

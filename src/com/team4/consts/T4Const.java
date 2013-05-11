@@ -5,7 +5,8 @@ import android.os.Environment;
 public class T4Const {
 	public final static String kDate = "T4Const.KEY.DATE";
 	public final static String kDates = "T4Const.KEY.DATES";
-	public final static String kStudentId = "T4Const.KEY.STUDENT_ID";
+	public final static String kStudent = "T4Const.KEY.STUDENT";
+	public final static String kStudentId = "T4Const.KEY.STUDENTID";
 	
 	public final static String rootFolderPath = Environment.getExternalStorageDirectory().getAbsolutePath() +"/DTTaskManager/";
 

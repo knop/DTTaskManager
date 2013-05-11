@@ -23,6 +23,10 @@ public class StudentParser implements IJsonObjectParser {
 				obj.setName(json.getString("name"));
 			}
 			
+			if (json.has("school")) {
+				obj.setSchool(json.getString("school"));
+			}
+			
 			return obj;
 		} catch (JSONException e) {
 			throw new T4Exception(ErrorCode.PARSE_ERROR_FORMAT_INVALID, "JSON格式错误");

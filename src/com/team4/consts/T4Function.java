@@ -1,6 +1,8 @@
 package com.team4.consts;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 public class T4Function {
 
@@ -19,6 +21,11 @@ public class T4Function {
 			file.mkdirs();
 		}
 		return path;
+	}
+	
+	public static String timeFormat(int msec) {
+		SimpleDateFormat sdf = new SimpleDateFormat("mm:ss", Locale.CHINA);		
+		return sdf.format(msec);
 	}
 	
 	public static String getMIMEType(File file) {
