@@ -35,7 +35,7 @@ public class DownloadAsyncTask extends AsyncTask<String, Void, Integer> {
 		HttpURLConnection mhuc = null;
 		
 		try {
-			String encodeURL = URLEncoder.encode(url);
+			String encodeURL = URLEncoder.encode(url, "UTF-8");
 			encodeURL = encodeURL.replaceAll("\\+", "%20");// 处理空格
 			encodeURL = encodeURL.replaceAll("%3A", ":");// 处理:
 			encodeURL = encodeURL.replaceAll("%2F", "/");// 处理/

@@ -1,5 +1,7 @@
 package com.team4.parser.json;
 
+import com.team4.utils.parser.IJsonParser;
+import com.team4.utils.parser.IParser;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -8,8 +10,6 @@ import com.team4.exceptions.ErrorCode;
 import com.team4.utils.exceptions.T4Exception;
 import com.team4.utils.parser.IJsonArrayParser;
 import com.team4.utils.parser.IJsonObjectParser;
-import com.team4.utils.parser.IJsonParser;
-import com.team4.utils.parser.IParser;
 import com.team4.utils.type.IBaseType;
 import com.team4.utils.util.T4Log;
 

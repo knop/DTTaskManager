@@ -2,11 +2,11 @@ package com.team4.activities;
 
 import java.util.ArrayList;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
@@ -22,7 +22,7 @@ import com.team4.type.TStudent;
 import com.team4.utils.exceptions.T4Exception;
 import com.team4.utils.type.T4List;
 
-public class MainActivity extends FragmentActivity implements
+public class MainActivity extends Activity implements
 		LeftListFragment.Callbacks, OnClickListener, IGetDatesTaskCompletation {
 
 	private View mViewEmpty;
@@ -49,9 +49,9 @@ public class MainActivity extends FragmentActivity implements
 		mDates = (ArrayList<TDate>) intent.getSerializableExtra(T4Const.kDates);
 		mStudent = (TStudent) intent.getSerializableExtra(T4Const.kStudent);
 		TextView tvStudentInfo = (TextView)mViewEmpty.findViewById(R.id.tv_student_info);
-		tvStudentInfo.setText(mStudent.getSchool()+" "+mStudent.getName());
-		if (mDates != null) {
-			mLeftFragment = (LeftListFragment) getSupportFragmentManager()
+		if (mStudent != null && mDates != null) {
+            tvStudentInfo.setText(mStudent.getSchool()+" "+mStudent.getName());
+			mLeftFragment = (LeftListFragment) getFragmentManager()
 					.findFragmentById(R.id.left_list_fragment);
 			TDate totalDate = new TDate();
 			totalDate.setDate("总览");
@@ -74,7 +74,7 @@ public class MainActivity extends FragmentActivity implements
 			arguments.putString(T4Const.kStudentId, String.valueOf(mStudent.getId()));
 			mRightFragment = new RightDetailFragment();
 			mRightFragment.setArguments(arguments);
-			getSupportFragmentManager().beginTransaction()
+            getFragmentManager().beginTransaction()
 					.replace(R.id.item_detail_container, mRightFragment).commit();
 		}
 	}
@@ -133,7 +133,7 @@ public class MainActivity extends FragmentActivity implements
 					android.R.id.text1, dates));
 			mViewEmpty.setVisibility(View.VISIBLE);
 			mViewContainer.setVisibility(View.GONE);
-			getSupportFragmentManager().beginTransaction().remove(mRightFragment).commit();
+            getFragmentManager().beginTransaction().remove(mRightFragment).commit();
 		} else {
 			String errorMessage;
 			if (ex != null)
