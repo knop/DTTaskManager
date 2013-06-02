@@ -10,7 +10,7 @@ public class T4Const {
 	
 	public final static String rootFolderPath = Environment.getExternalStorageDirectory().getAbsolutePath() +"/DTTaskManager/";
 
-	public final static String[][] MIME_MapTable={
+	public final static String[][] MIME_MapTable = {
 			//{后缀名, MIME类型}
 			{".3gp","video/3gpp"},
 			{".apk","application/vnd.android.package-archive"},

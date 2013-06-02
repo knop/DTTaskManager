@@ -2,7 +2,9 @@
 <project version="4">
   <component name="AndroidLayoutPreviewToolWindow">
     <option name="state">
-      <GlobalState />
+      <GlobalState>
+        <option name="visible" value="false" />
+      </GlobalState>
     </option>
   </component>
   <component name="AndroidLayouts">
@@ -12,6 +14,12 @@
       </config>
     </shared>
     <layouts>
+      <layout url="file://$PROJECT_DIR$/res/layout/activity_login.xml">
+        <config>
+          <device>Nexus 10</device>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/res/layout/activity_main.xml">
         <config>
           <device>10.1in WXGA (Tablet)</device>
@@ -25,12 +33,17 @@
     <list default="true" id="bc15a530-64d3-45ed-a771-3911da42c733" name="Default" comment="" />
     <ignored path="DTTaskManager.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="bc15a530-64d3-45ed-a771-3911da42c733" time="1369024056815" ignored="false" />
+    <file path="/Dummy.txt" changelist="bc15a530-64d3-45ed-a771-3911da42c733" time="1369830605718" ignored="false" />
     <file path="/a.html" changelist="bc15a530-64d3-45ed-a771-3911da42c733" time="1368851725397" ignored="false" />
-    <file path="/fragment.java" changelist="bc15a530-64d3-45ed-a771-3911da42c733" time="1368851821602" ignored="false" />
+    <file path="/fragment.java" changelist="bc15a530-64d3-45ed-a771-3911da42c733" time="1369129323347" ignored="false" />
     <file path="/IJsonArrayParser.java" changelist="bc15a530-64d3-45ed-a771-3911da42c733" time="1368851840381" ignored="false" />
     <file path="/MainActivity.java" changelist="bc15a530-64d3-45ed-a771-3911da42c733" time="1369017883607" ignored="false" />
     <file path="/DownloadAsyncTask.java" changelist="bc15a530-64d3-45ed-a771-3911da42c733" time="1369019082239" ignored="false" />
+    <file path="/HttpManager.java" changelist="bc15a530-64d3-45ed-a771-3911da42c733" time="1369841238444" ignored="false" />
+    <file path="/LoginActivity.java" changelist="bc15a530-64d3-45ed-a771-3911da42c733" time="1369841564935" ignored="false" />
+    <file path="/a.dummy" changelist="bc15a530-64d3-45ed-a771-3911da42c733" time="1369840712358" ignored="false" />
+    <file path="/activity_login.xml" changelist="bc15a530-64d3-45ed-a771-3911da42c733" time="1369840912222" ignored="false" />
+    <file path="/AndroidManifest.xml" changelist="bc15a530-64d3-45ed-a771-3911da42c733" time="1369841492983" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +58,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -82,6 +94,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -91,94 +104,104 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="JsonParserImpl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/team4/parser/json/JsonParserImpl.java">
+      <file leaf-file-name="LoginActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/team4/activities/LoginActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="21" selection-start="640" selection-end="640" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="74" column="9" selection-start="2043" selection-end="2043" vertical-scroll-proportion="0.39732888">
+              <folding>
+                <element signature="e#2598#2602#0" expanded="true" />
+                <element signature="e#3089#3135#0" expanded="true" />
+                <element signature="e#3659#3705#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TTask.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/team4/type/TTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="13" selection-start="108" selection-end="108" vertical-scroll-proportion="0.0">
+      <file leaf-file-name="activity_login.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/activity_login.xml">
+          <provider editor-type-id="text-editor">
+            <state line="85" column="35" selection-start="2963" selection-end="2963" vertical-scroll-proportion="-16.4">
               <folding />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TStudent.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/team4/type/TStudent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="13" selection-start="108" selection-end="108" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TDate.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/team4/type/TDate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="8" selection-start="450" selection-end="450" vertical-scroll-proportion="0.65166664">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IParser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../XhUtility/src/com/team4/utils/parser/IParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="21" selection-start="586" selection-end="586" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LeftListFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/team4/activities/LeftListFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="44" selection-start="273" selection-end="273" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_main.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/activity_main.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="47" selection-start="738" selection-end="756" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
+          <provider selected="true" editor-type-id="android-designer">
             <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DatesParser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/team4/parser/json/DatesParser.java">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="13" selection-start="372" selection-end="372" vertical-scroll-proportion="0.0">
+            <state line="5" column="0" selection-start="214" selection-end="214" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#1056#1074#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="T4Const.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/team4/consts/T4Const.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="35" selection-start="820" selection-end="820" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IJsonArrayParser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../XhUtility/src/com/team4/utils/parser/IJsonArrayParser.java">
+      <file leaf-file-name="DTTaskManager.iml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DTTaskManager.iml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="53" selection-start="587" selection-end="607" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IJsonObjectParser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../XhUtility/src/com/team4/utils/parser/IJsonObjectParser.java">
+      <file leaf-file-name="proguard-project.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/proguard-project.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="1" selection-start="674" selection-end="674" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="project.properties" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HttpManager.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/team4/manager/HttpManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="63" column="0" selection-start="1760" selection-end="1760" vertical-scroll-proportion="-6.185185">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3427#3457#0" expanded="true" />
+                <element signature="e#3898#3928#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HttpUtility.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../XhUtility/src/com/team4/utils/http/HttpUtility.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="93" column="46" selection-start="3638" selection-end="3638" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../XhUtility/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="28" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -209,6 +232,12 @@
         <option value="$PROJECT_DIR$/src/com/team4/activities/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/com/team4/task/DownloadAsyncTask.java" />
         <option value="$PROJECT_DIR$/src/com/team4/type/TDate.java" />
+        <option value="$PROJECT_DIR$/src/com/team4/consts/T4Const.java" />
+        <option value="$PROJECT_DIR$/../XhUtility/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/res/layout/activity_login.xml" />
+        <option value="$PROJECT_DIR$/src/com/team4/manager/HttpManager.java" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/com/team4/activities/LoginActivity.java" />
       </list>
     </option>
   </component>
@@ -260,8 +289,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -290,55 +319,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="utils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DTTaskManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="XhUtility" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="utils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DTTaskManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="XhUtility" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="utils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="exceptions" />
+              <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -457,6 +438,50 @@
               <option name="myItemId" value="team4" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DTTaskManager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DTTaskManager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="team4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DTTaskManager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DTTaskManager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="team4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="consts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -490,7 +515,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
+              <option name="myItemId" value="bin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -500,15 +525,17 @@
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="vcs.Git" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
   </component>
@@ -612,7 +639,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="PREFERRED_AVD" value="" />
       <option name="USE_COMMAND_LINE" value="true" />
       <option name="COMMAND_LINE" value="" />
@@ -669,39 +696,63 @@
       <workItem from="1368851479393" duration="800000" />
       <workItem from="1368931289681" duration="1220000" />
       <workItem from="1369014511972" duration="4628000" />
-      <workItem from="1369024052868" duration="1706000" />
+      <workItem from="1369024052868" duration="2310000" />
+      <workItem from="1369128128329" duration="779000" />
+      <workItem from="1369128929598" duration="1822000" />
+      <workItem from="1369232723103" duration="651000" />
+      <workItem from="1369830593524" duration="7305000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8480000" />
+    <option name="totallyTimeSpent" value="19641000" />
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1874" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32983425" sideWeight="0.67022413" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20110497" sideWeight="0.67022413" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946378" sideWeight="0.6937033" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6467449" sideWeight="0.42154697" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25027624" sideWeight="0.22945571" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25027624" sideWeight="0.22945571" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1782284" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32870865" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3062967" sideWeight="0.5779005" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25027624" sideWeight="0.67129135" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25027624" sideWeight="0.67022413" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32983425" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20110497" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32983425" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -767,116 +818,128 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../XhUtility/src/com/team4/utils/parser/IJsonArrayParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="53" selection-start="587" selection-end="607" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../XhUtility/src/com/team4/utils/parser/IJsonObjectParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="1" selection-start="674" selection-end="674" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../XhUtility/bin/jarlist.cache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../XhUtility/src/com/team4/utils/parser/IJsonParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="28" selection-start="570" selection-end="581" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../XhUtility/src/com/team4/utils/parser/IJsonArrayParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="53" selection-start="587" selection-end="607" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../XhUtility/src/com/team4/utils/parser/IJsonObjectParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="1" selection-start="674" selection-end="674" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="47" selection-start="738" selection-end="756" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/team4/activities/LeftListFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="44" selection-start="273" selection-end="273" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/team4/activities/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="22" selection-start="3928" selection-end="3928" vertical-scroll-proportion="0.0">
+        <state line="39" column="22" selection-start="1240" selection-end="1254" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/team4/activities/RightDetailFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="174" column="56" selection-start="4969" selection-end="4984" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/team4/activities/MediaPalyDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="17" selection-start="3169" selection-end="3169" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/team4/manager/MediaManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/team4/consts/T4Function.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="25" selection-start="352" selection-end="352" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/team4/task/DownloadAsyncTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="63" selection-start="965" selection-end="965" vertical-scroll-proportion="0.0">
+        <state line="55" column="0" selection-start="1561" selection-end="1798" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/team4/parser/json/DatesParser.java">
+    <entry file="file://$PROJECT_DIR$/DTTaskManager.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="372" selection-end="372" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../XhUtility/src/com/team4/utils/parser/IParser.java">
+    <entry file="file://$PROJECT_DIR$/proguard-project.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="21" selection-start="586" selection-end="586" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/team4/parser/json/JsonParserImpl.java">
+    <entry file="file://$PROJECT_DIR$/project.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="21" selection-start="640" selection-end="640" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/team4/type/TTask.java">
+    <entry file="file://$PROJECT_DIR$/../XhUtility/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="108" selection-end="108" vertical-scroll-proportion="0.0">
+        <state line="3" column="28" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/team4/type/TStudent.java">
+    <entry file="file://$PROJECT_DIR$/src/com/team4/consts/T4Const.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="108" selection-end="108" vertical-scroll-proportion="0.0">
+        <state line="22" column="35" selection-start="820" selection-end="820" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/team4/type/TDate.java">
+    <entry file="file://$PROJECT_DIR$/../XhUtility/src/com/team4/utils/http/HttpUtility.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="8" selection-start="450" selection-end="450" vertical-scroll-proportion="0.65166664">
+        <state line="93" column="46" selection-start="3638" selection-end="3638" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_login.xml">
+      <provider editor-type-id="text-editor">
+        <state line="85" column="35" selection-start="2963" selection-end="2963" vertical-scroll-proportion="-16.4">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/team4/manager/HttpManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="0" selection-start="1760" selection-end="1760" vertical-scroll-proportion="-6.185185">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3427#3457#0" expanded="true" />
+            <element signature="e#3898#3928#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="214" selection-end="214" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#1056#1074#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/team4/activities/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="9" selection-start="2043" selection-end="2043" vertical-scroll-proportion="0.39732888">
+          <folding>
+            <element signature="e#2598#2602#0" expanded="true" />
+            <element signature="e#3089#3135#0" expanded="true" />
+            <element signature="e#3659#3705#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

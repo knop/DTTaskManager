@@ -23,5 +23,5 @@ public class TDate implements IBaseType, Serializable{
 		if (mDate != null)
 			return mDate;
 		return "";
-	}   
+	}
 }

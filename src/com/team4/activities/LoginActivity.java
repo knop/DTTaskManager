@@ -7,10 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.team4.consts.T4Const;
+import com.team4.consts.T4Function;
 import com.team4.dttaskmanager.R;
+import com.team4.manager.HttpManager;
 import com.team4.task.GetDatesAsyncTask;
 import com.team4.task.GetDatesAsyncTask.IGetDatesTaskCompletation;
 import com.team4.task.LoginAsyncTask;
@@ -19,6 +22,8 @@ import com.team4.type.TDate;
 import com.team4.type.TStudent;
 import com.team4.utils.exceptions.T4Exception;
 import com.team4.utils.type.T4List;
+
+import java.io.IOException;
 
 public class LoginActivity extends Activity implements 
 	OnClickListener, ILoginTaskCompletation, IGetDatesTaskCompletation{
@@ -33,6 +38,9 @@ public class LoginActivity extends Activity implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        this.setHost();
+
         mETUserName = (EditText)findViewById(R.id.et_username);
         mETPassword = (EditText)findViewById(R.id.et_password);
         
@@ -51,11 +59,26 @@ public class LoginActivity extends Activity implements
 		case R.id.btn_exit:
 			this.exit(); 
 			break;
+        case R.id.tv_host:
+            this.setHost();
+            break;
 		default:
 			break;
 		}
 	}
-	
+
+    private void setHost() {
+        try {
+            HttpManager.instance().setHost(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        TextView tvHost = (TextView)findViewById(R.id.tv_host);
+        tvHost.setOnClickListener(this);
+        tvHost.setText("Host:" + HttpManager.instance().getHost());
+    }
+
 	private void login() {
 		String userName = mETUserName.getText().toString();
 		String password = mETPassword.getText().toString();

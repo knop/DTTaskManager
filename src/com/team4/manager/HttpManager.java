@@ -1,15 +1,8 @@
 package com.team4.manager;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.message.BasicNameValuePair;
-
 import android.content.Context;
-
+import android.content.SharedPreferences;
+import com.team4.consts.T4Function;
 import com.team4.parser.json.DatesParser;
 import com.team4.parser.json.JsonParserImpl;
 import com.team4.parser.json.StudentParser;
@@ -22,10 +15,22 @@ import com.team4.type.TTask;
 import com.team4.utils.exceptions.T4Exception;
 import com.team4.utils.http.HttpUtility;
 import com.team4.utils.type.T4List;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.util.EncodingUtils;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class HttpManager {
 
-	private final static String host = "http://dreamtown.team4.us";
+//	private final static String defaultHost = "http://dreamtown.team4.us";
+    private final static String defaultHost = "http://192.168.2.180";
 	private final static String userAgent = "Team4.US/ZMTTaskManager/Android";
 	
 	//API接口名称
@@ -38,10 +43,12 @@ public class HttpManager {
 	
 	//接口类型名称	
 	private static HttpManager sInstance;
+
+    private static String host = defaultHost;
 	
 	private HttpManager() {
-		
-	}
+
+    }
 	
 	public static HttpManager instance() {
 		if (sInstance == null) {
@@ -50,6 +57,41 @@ public class HttpManager {
 		
 		return sInstance;
 	}
+
+    public String getHost() {
+        return host;
+    }
+
+    public void setHost(Context context) throws IOException {
+        SharedPreferences settings = context.getSharedPreferences("T4Config.cfg", 0);
+        host = settings.getString("Host", defaultHost);
+
+        String configPath = T4Function.rootFolderPath() + "/T4Config.cfg";
+        File file = new File(configPath);
+        if (file.exists()) {
+            FileInputStream fis = new FileInputStream(file);
+            int length = fis.available();
+            byte[] bytes = new byte[length];
+            fis.read(bytes);
+            fis.close();
+            String host = EncodingUtils.getString(bytes, "UTF-8");
+            String prefix = "http://";
+            if (!host.startsWith(prefix)) {
+                host = prefix + host;
+            }
+            this.setHost(context, host);
+        }
+    }
+
+    private void setHost(Context context, String newHost) {
+        if (newHost != null &&  newHost.length() > 0) {
+            SharedPreferences settings = context.getSharedPreferences("T4Config.cfg", 0);
+            settings.edit()
+                    .putString("Host", newHost)
+                    .commit();
+            host = newHost;
+        }
+    }
 	
 	//Http请求调用
 	public TStudent login(Context context, String username, String password) throws T4Exception {

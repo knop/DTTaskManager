@@ -78,4 +78,11 @@
             android:textColor="#FFFFFF" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/tv_host"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="1111111"
+        android:textColor="#000000" android:gravity="bottom" android:layout_gravity="right"/>
+
 </LinearLayout>
